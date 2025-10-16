@@ -14,3 +14,11 @@ for subject in range(subjects):
                 "Your grade must be in between 0.0 and 4.0")
         except ValueError:
             print("Please enter a numerical value!")
+average_gpa = sum(gpa_list) / len(gpa_list)
+print("Calculating gpa.../n"
+      f"your gpa is currently at a {average_gpa}")
+sections = int(input("Which semester would you like to focus on? "))
+if sections == 1:
+    print
+elif sections == 2:
+    
