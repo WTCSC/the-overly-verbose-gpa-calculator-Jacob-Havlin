@@ -82,19 +82,18 @@ while True:
             print("Your goal GPA needs to be in between 0.0 and 5.0")
     except ValueError:
         print("Your GPA must be a valid number")
-if goal_set:
-    print(f"Your goal GPA is {prompted_gpa}.\n"
-    "Now I am going to help you identify which grade you should improve in order to achieve your new GPA")
-    possible_grade = []
-    for subject in range(len(gpa_list)):
-        temp_list = gpa_list.copy()
-        temp_list[subject] = 4.0
-        new_average = round(sum(temp_list) / len(temp_list), 2)
-        if new_average >= prompted_gpa:
-            possible_grade.append(subject+1)
-    if possible_grade:
-        print(f"You could reach your goal GPA of {prompted_gpa} by improving the following grades:")
-        for subject in possible_grade:
-            print(f"Class {subject}")
-    else:
-        print("Reaching your goal will require improving multiple grades")
+print(f"Your goal GPA is {prompted_gpa}.\n"
+"Now I am going to help you identify which grade you should improve in order to achieve your new GPA")
+possible_grade = []
+for subject in range(len(gpa_list)):
+    temp_list = gpa_list.copy()
+    temp_list[subject] = 5.0
+    new_average = round(sum(temp_list) / len(temp_list), 2)
+    if new_average >= prompted_gpa:
+        possible_grade.append(subject+1)
+if possible_grade:
+    print(f"You could reach your goal GPA of {prompted_gpa} by improving the following grades:")
+    for subject in possible_grade:
+        print(f"Class {subject}")
+else:
+    print("Reaching your goal will require improving multiple grades")
