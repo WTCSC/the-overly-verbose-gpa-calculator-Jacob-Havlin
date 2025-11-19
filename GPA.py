@@ -44,7 +44,7 @@ while True:
         if class_semester <= 0:
             print("You must have taken at least 1 class right?")
         elif class_semester > len(gpa_list):
-            print("Your ")
+            print("You have to many classes")
         else:
             break 
     except ValueError:
